@@ -22,5 +22,12 @@ Route::post('/mhs/store', 'MahasiswaController@store');
 Route::get('/mhs/edit/{nim}', 'MahasiswaController@edit');
 Route::put('/mhs/update/{mahasiswa:nim}', 'MahasiswaController@update')->name('mhs.update');
 Route::get('/mhs/delete/{mahasiswa:nim}', 'MahasiswaController@destroy')->name('mhs.delete');
+
 //Prodi (Route Framework)
-Route::resource('/prodi', 'ProdiController');
+Route::get('/prodi', 'ProdiController@index')->name('prodi.index');
+Route::get('/prodi/list', 'ProdiController@prodi_list')->name('prodi.list');
+Route::get('/prodi/create', 'ProdiController@create');
+Route::post('/prodi/store', 'ProdiController@store');
+Route::get('/prodi/edit/{kode_prodi}', 'ProdiController@edit');
+Route::put('/prodi/update/{prodi:kode_prodi}', 'ProdiController@update')->name('prodi.update');
+Route::get('/prodi/delete/{prodi:kode_prodi}', 'ProdiController@destroy')->name('prodi.delete');
